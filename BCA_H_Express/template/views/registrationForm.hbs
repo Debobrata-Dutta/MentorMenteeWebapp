@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Student Registration Form</title>
+    <link rel="stylesheet" href="/css/registrationForm.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+    <h1 align="center"><b>STUDENT REGISTRATION FORM</b></h1>
+    <hr>
+    <h2><b>STUDENT DETAILS</b></h2>
+
+    <form id="registrationForm" method="post" action="/submit" enctype="multipart/form-data">
+        <table class="table"><tr>
+            <td><div class="required">
+                <label for="firstName">First Name:</label>
+            </div></td>
+            <td><div class="required">
+                <label for="lastName">Last Name:</label>
+            </div></td></tr>
+            <tr><td><input type="text" id="firstName" name="firstName" required></td>
+                <td><input type="text" id="lastName" name="lastName" required></td></tr></table>
+        <div class="required">
+            <label for="rollNo">Roll No:</label>
+        </div>
+        <input type="text" id="rollNo" name="rollNo" required>
+        <table class="table"><tr><td><div class="required">
+            <label for="course">Course:</label>
+        </div></td>
+            <td><div class="required">
+                <label for="gender">Gender:</label>
+            </div></td>
+            <td><div class="required">
+                <label for="dob">Date of Birth:</label>
+            </div></td>
+        </tr>
+            <tr><td width="180px"><select id="course" name="course" required>
+                <option value="">SELECT</option>
+                <option value="B.SC Computer Science">B.SC Computer Science</option>
+                <option value="B.TECH Biomedical Engineering">B.TECH Biomedical Engineering</option>
+                <option value="B.TECH Civil Engineering">B.TECH Civil Engineering</option>
+                <option value="B.TECH Computer Science Engineering">B.TECH Computer Science Engineering</option>
+                <option value="B.TECH Electrical Engineering">B.TECH Electrical Engineering</option>
+                <option value="B.TECH Electronics And Communication Engineering">B.TECH Electronics And Communication Engineering</option>
+                <option value="B.Tech (Hons) Computer Science and Engineering (Artificial Intelligence & Machine)">B.Tech (Hons) Computer Science and Engineering (Artificial Intelligence & Machine)</option>
+                <option value="B.TECH Mechanical Engineering">B.TECH Mechanical Engineering</option>
+                <option value="BCA">BCA</option>
+                <option value="BCA(HONS)">BCA(HONS)</option>
+                <option value="BCA Gaming & Animation">BCA Gaming & Animation</option>
+                <option value="BCA (Hons) Banking, Financial Services and Insurance">BCA (Hons) Banking, Financial Services and Insurance</option>
+                <option value="M.TECH Computer Science Engineering">M.TECH Computer Science Engineering </option>
+                <option value="M.TECH Civil Structural Engineering">M.TECH Civil Structural Engineering </option>
+                <option value="MCA">MCA </option>
+            </select></td>
+
+                <td>
+                    <select id="gender" name="gender" required>
+                        <option value="">SELECT</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select></td>
+
+                <td><input type="date" id="dob" name="dob" required></td></tr></table>
+
+        <tr>
+            <div>
+                <td>
+                    <label for="batch">Batch:</label>
+                </td>
+            </div>
+
+
+            <td>
+                <select id="batch" name="batch" required>
+                    <option value="">SELECT</option>
+                    <option value="2017">2017</option>
+                    <option value="2018">2018</option>
+                    <option value="2019">2019</option>
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                    <option value="2026">2026</option>
+                    <option value="2027">2027</option>
+                </select>
+            </td>
+            <div>
+                <td>
+                    <label for="Section">Section:</label>
+                </td>
+            </div>
+            <td>
+                <select id="section" name="section" required>
+                    <option value="">SELECT</option>
+                    <option value="N.A">N.A</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="D">D</option>
+                    <option value="E">E</option>
+                    <option value="F">F</option>
+                    <option value="G">G</option>
+                    <option value="H">H</option>
+                </select>
+            </td>
+        </tr>
+        <br>
+        <div class="required">
+            <label for="email">Email:</label>
+        </div>
+        <input type="email" id="email" placeholder="Fillout Your University's Student Mail ID" name="email" required>
+        </br>
+        <div class="required">
+            <label for="phone">Phone No:</label>
+        </div>
+        <input type="tel" id="phone" name="phone" required>
+        <div class="required">
+            <label for="address">Address:</label>
+        </div>
+        <input type="text" id="address" name="address" required>
+        <div class="required">
+            <label for="image"> Upload Your Picture :</label>
+        </div>
+        <br>
+        <input type="file" id="image" name="image" accept=".jpg, .png,.JPEG" required>
+        </br>
+        <h2><b>PARENTS DETAILS</b></h2>
+        <div class="required">
+            <label for="fatherName">Father's Name:</label>
+        </div>
+        <input type="text" id="fatherName" name="fatherName" required>
+        <div class="required">
+            <label for="motherName">Mother's Name:</label>
+        </div>
+        <input type="text" id="motherName" name="motherName" required>
+        <div class="required">
+            <label for="fatherOccupation">Father's Occupation:</label>
+        </div>
+        <input type="text" id="fatherOccupation" name="fatherOccupation" required>
+        <div class="required">
+            <label for="motherOccupation">Mother's Occupation:</label>
+        </div>
+        <input type="text" id="motherOccupation" name="motherOccupation" required>
+        <div class="required">
+            <label for="fatherEmail">Father's Email:</label></div>
+        <input type="email" id="fatherEmail" name="fatherEmail">
+        <div class="required">
+            <label for="fatherPhone">Father's Phone No:</label>
+        </div>
+        <input type="tel" id="fatherPhone" name="fatherPhone" required>
+        <label for="motherEmail">Mother's Email:</label>
+        <input type="email" id="motherEmail" name="motherEmail">
+        <div class="required">
+            <label for="motherPhone">Mother's Phone No:</label>
+        </div>
+        <input type="tel" id="motherPhone" name="motherPhone" required>
+        <h2><b>EDUCATION QUALIFICATION</b></h2>
+        <div class="required">
+            <label for="class10Percentage">Class 10 Percentage:</label>
+        </div>
+        <input type="text" id="class10Percentage" name="class10Percentage" required>
+        <div class="required">
+            <label for="class12Percentage">Class 12 Percentage:</label>
+        </div>
+
+        <input type="text" id="class12Percentage" name="class12Percentage" required>
+        <input type="text" name="comments" style="visibility: hidden">
+        <input type="date" hidden name="date">
+        <label for="agree">I agree to the terms and conditions:</label>
+        <input type="checkbox" id="agree" name="agree">
+        <input type="submit" value="Submit" id="submitButton" disabled>
+    </form>
+</div>
+<script src="/js/registrationForm.js">
+</script>
+</body>
+</html>

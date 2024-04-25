@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/login.css">
+    <title>Login Page and Registration</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+
+
+<div class="hw">
+    <img align="center" src="/images/img.png" id="img">
+    <div class="form-box">
+        <div class="button-box">
+            <div id="btn"></div>
+            <button type="button" class="toggle-btn" onclick="login()">Log In</button>
+            <button type="button" class="toggle-btn" onclick="signup()">Sign Up</button>
+        </div><h6 id="title" align="center"> Mentor Mentee Form </h6>
+        <form id="login" class="input-group" method="post" action="/login">
+            <input name="username" type="text" class="input-field" placeholder="User Id" required>
+            <input name="email" type="email" class="input-field" placeholder="Email ID">
+            <input name="password" type="password" class="input-field" id="pass" placeholder="Enter Password" required>
+            <input type="checkbox" class="showpass" onclick="myFunction()"> Show Password
+            <br><br>
+            <button type="submit" class="submit-btn">Log in </button>
+        </form>
+        <form id="register" method="post" action="/save" class="input-group">
+            <input name="username" type="text" class="input-field" placeholder="User Id" required>
+            <input name="email" type="email" class="input-field" placeholder="Email Id (only Adamas university student mail)" required >
+            <input name="password" type="password" class="input-field" id="pass2" placeholder="Enter New Password" required>
+            <input type="checkbox"  class="showpass" onclick="myFunction()"> Show Password
+            <br><br>
+            <button type="submit" class="submit-btn">Register </button>
+        </form>
+    </div>
+</div>
+<script src="/js/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+
+<a href="/myprofile">MY PROFILE</a>
+
+<a href="/logout">LOGOUT</a>
+
+<h2>User Details</h2>
+
+<!-- Search box -->
+<form id="searchForm">
+    <label for="search">Search:</label>
+    <input type="text" id="search" name="search">
+    <button type="button" id="button" onclick="searchdata()" >Search</button>
+    <br><br>
+</form>
+
+<table id="table">
+    <thead>
+    <tr>
+
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Roll No</th>
+        <th>Course</th>
+        <th>Gender</th>
+        <th>Date-Of-Birth</th>
+        <th>Batch</th>
+        <th>Section</th>
+        <th>Address</th>
+        <th>Email</th>
+        <th>Mobile Number</th>
+        <th>Father's Name</th>
+        <th>Mother's Name</th>
+        <th>Father's Occupation</th>
+        <th>Mother's Occupation</th>
+        <th>Father's Email</th>
+        <th>Mother's Email</th>
+        <th>Father's Phone</th>
+        <th>Mother's Phone</th>
+        <th>Class 10 Percentage</th>
+        <th>Class 12 Percentage</th>
+        <th>Image</th>
+        <th>Pick Date Of Comment</th>
+        <th>Comments</th>
+    </tr>
+    </thead>
+    <tbody id="userTableBody">
+    {{#if regis}}
+        {{#each regis}}
+            <tr>
+                <form action="/update" method="post">
+                    <input name="id" hidden type="text"  value="{{this._id}}">
+                    <td><input name="firstName" class="enter" type="text" value="{{this.firstName}}"></td>
+                    <td><input name="lastName" class="enter" type="text" value="{{this.lastName}}"></td>
+                    <td><input name="rollNo" class="enter" type="text" value="{{this.rollNo}}"></td>
+                    <td><input name="course" class="enter" type="text" value="{{this.course}}"></td>
+                    <td><select id="gender" name="gender" class="enter">
+                        <option value="{{this.gender}}">{{this.gender}}</option>
+                        <option value="male">male</option>
+                        <option value="female">female</option>
+                    </select></td>
+                    <td><input name="dob" class="enter" type="date" value="{{this.dob}}"></td>
+                    <td> <select name="batch" class="enter">
+                        <option value="{{this.batch}}">{{this.batch}}</option>
+                        <option value="2017">2017</option>
+                        <option value="2018">2018</option>
+                        <option value="2019">2019</option>
+                        <option value="2020">2020</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                        <option value="2023">2023</option>
+                        <option value="2024">2024</option>
+                        <option value="2025">2025</option>
+                        <option value="2026">2026</option>
+                        <option value="2027">2027</option>
+                    </select></td>
+                    <td><select class="enter" name="section" >
+                        <option value="{{this.section}}">{{this.section}}</option>
+                        <option value="N.A">N.A</option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="D">D</option>
+                        <option value="E">E</option>
+                        <option value="F">F</option>
+                        <option value="G">G</option>
+                        <option value="H">H</option>
+                    </select></td>
+                    <td><input name="address" class="enter" type="text" value="{{this.address}}"></td>
+                    <td><input name="email" class="enter" type="text" value="{{this.email}}" readonly></td>
+                    <td><input name="phone" class="enter" type="text" value="{{this.phone}}"></td>
+                    <td><input name="fatherName" class="enter" type="text" value="{{this.fatherName}}"></td>
+                    <td><input name="motherName" class="enter" type="text" value="{{this.motherName}}"></td>
+                    <td><input name="fatherOccupation" class="enter" type="text" value="{{this.fatherOccupation}}"></td>
+                    <td><input name="motherOccupation" class="enter" type="text" value="{{this.motherOccupation}}"></td>
+                    <td><input name="fatherEmail" class="enter" type="text" value="{{this.fatherEmail}}"></td>
+                    <td><input name="motherEmail" class="enter" type="text" value="{{this.motherEmail}}"></td>
+                    <td><input name="fatherPhone" class="enter" type="text" value="{{this.fatherPhone}}"></td>
+                    <td><input name="motherPhone" class="enter" type="text" value="{{this.motherPhone}}"></td>
+                    <td><input name="class10Percentage" class="enter" type="text" value="{{this.class10Percentage}}"></td>
+                    <td><input name="class12Percentage" class="enter" type="text" value="{{this.class12Percentage}}"></td>
+                    <td><img src="uploads/{{this.image}}" alt="Profile Picture" style="max-width: 100px; max-height: 100px;"></td>
+                    <td><input name="date" class="enter" type="date" value="Pick Date"></td>
+                    <td><textarea name="comments" rows="4" class="enter">{{this.date}}:"{{this.comments}}"</textarea></td>
+                    <td><input class="change" type="submit" value="Update"></td>
+                 <td><button class="change" formaction="/delete">delete</button> </td>
+                </form>
+            </tr>
+        {{/each}}
+    {{else}}
+        <tr>
+            <td colspan="20">No user data available</td>
+        </tr>
+    {{/if}}
+    </tbody>
+</table>
+
+<script>
+    function searchdata(){
+        const searchQuery = document.getElementById('search').value.toLowerCase();
+        const rows = document.querySelectorAll('#userTableBody tr');
+
+        rows.forEach(row => {
+            let found = false;
+            const cells = row.querySelectorAll('td input'); // Select input elements within each row
+            cells.forEach(cell => {
+                if (cell.value.toLowerCase().includes(searchQuery)) { // Check input value
+                    found = true;
+                }
+            });
+            if (found) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    }
+</script>
+
+</body>
+</html>

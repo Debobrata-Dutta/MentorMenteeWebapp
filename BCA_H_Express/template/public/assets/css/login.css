@@ -1,0 +1,119 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight:500;
+    font-style: normal;
+    font-size:13px;
+}
+#img{
+    width:92px;
+    height:90px;
+    position:absolute;
+    margin:2% 3%;
+}
+#title{
+    font-size:20px;
+}
+
+.hw{
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background: linear-gradient(deepskyblue,limegreen);
+    background-size: cover;
+    position: absolute;
+
+}
+.form-box{
+    width: 380px;
+    height: 480px;
+    position: relative;
+    margin: 6% auto;
+    background: rgba(255, 251, 246, 0.84);
+    border-radius: 15px;
+    padding: 5px;
+    overflow: hidden;
+    box-shadow:0 0 10px 2px rgba(0, 58, 112, 0.89);
+}
+.button-box{
+    width: 220px;
+    margin: 35px auto;
+    position: relative;
+    box-shadow: 0 0 20px 8px rgba(46, 68, 169, 0.63);
+    border-radius: 30px;
+}
+.toggle-btn{
+    padding: 10px 30px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+}
+#btn{
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 110px;
+    height: 100%;
+    background: rgba(120, 115, 255, 0.7);
+    border-radius: 30px;
+    transition: .5s;
+}
+.input-group{
+    top: 180px;
+    position: absolute;
+    width: 350px;
+    transition: .5s;
+}
+.input-field{
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid #472e75;
+    outline: none;
+    background: transparent;
+}
+.submit-btn{
+    width:85%;
+    padding: 10px 30px;
+    cursor : pointer;
+    display: block;
+    margin:auto;
+    background: rgba(120, 115, 255, 0.7);
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+}
+span{
+    color: #4b4b4b;
+    font-size: 12px;
+    bottom: 68px;
+    position: absolute;
+}
+#login{
+    left: 10px;
+}
+#register
+{
+    left: 450px;
+}
+.submit-btn:hover{scale:1.1}
+.submit-btn:active{background-color: rgb(120, 115, 255)
+}
+@media (min-width: 300px) and (max-width: 1000px) {
+
+    .form-box{
+        margin:30% auto;
+        scale:160%;
+    }
+    #img{
+        margin:2% 43%;
+        scale:120%;
+    }
+}

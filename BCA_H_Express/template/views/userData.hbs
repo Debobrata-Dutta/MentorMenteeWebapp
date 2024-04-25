@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <title>User Details</title>
+<link rel="stylesheet" href="/css/userData.css">
+</head>
+<body>
+
+<h2 class="front"><b>Already Uploaded User Details</b></h2>
+
+<a class="front" href="/myprofile">MY PROFILE</a><br><br>
+<a class="front" href="/logout">LOGOUT</a>
+<form action="/update" method="post">
+    <input name="id" hidden type="text"  value="{{registrationData._id}}">
+<table align="center">
+    <tr>
+        <td class="front">Profile Picture</td>
+        <td class="front">First Name</td>
+        <td class="front">Last Name</td>
+        <td class="front">Roll_No</td>
+    </tr>
+    <tr>
+        <td rowspan="3"><img src="uploads/{{registrationData.image}}" alt="Profile Picture" style="max-width: 200px; max-height: 200px;"></td>
+        <td class="f2"><input name="firstName" class="input" type="text" value="{{registrationData.firstName}}"></td>
+        <td class="f2"><input name="lastName" class="input" type="text" value="{{registrationData.lastName}}"></td>
+        <td class="f2"><input name="rollNo" class="input" type="text" value="{{registrationData.rollNo}}"></td>
+    </tr>
+    <tr>
+        <td class="front">Course</td>
+        <td class="front">Gender</td>
+        <td class="front">Date of Birth</td>
+    </tr>
+    <tr>
+        <td class="f2"><input name="course" class="input" type="text" value="{{registrationData.course}}"></td>
+        <td class="f2"><select class="input" name="gender">
+            <option value="{{registrationData.gender}}">{{registrationData.gender}}</option>
+            <option value="male">male</option>
+            <option value="female">female</option>
+        </select></td>
+        <td class="f2"><input name="dob" class="input" type="date" value="{{registrationData.dob}}"></td>
+    </tr>
+    <tr>
+        <td class="front" colspan="2">Batch</td>
+        <td class="front" colspan="2">Section</td>
+    </tr>
+    <td class="f2" colspan="2"><select name="batch" class="input">
+        <option value="{{registrationData.batch}}">{{registrationData.batch}}</option>
+        <option value="2017">2017</option>
+        <option value="2018">2018</option>
+        <option value="2019">2019</option>
+        <option value="2020">2020</option>
+        <option value="2021">2021</option>
+        <option value="2022">2022</option>
+        <option value="2023">2023</option>
+        <option value="2024">2024</option>
+        <option value="2025">2025</option>
+        <option value="2026">2026</option>
+        <option value="2027">2027</option>
+    </select></td>
+    <td class="f2" colspan="2"><select class="input" name="section" >
+        <option value="{{registrationData.section}}">{{registrationData.section}}</option>
+        <option value="N.A">N.A</option>
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="D">D</option>
+        <option value="E">E</option>
+        <option value="F">F</option>
+        <option value="G">G</option>
+        <option value="H">H</option>
+    </select></td>
+    <tr>
+        <td class="front" colspan="2">Email</td>
+        <td class="front" colspan="2">Phone_No</td>
+    </tr>
+    <tr>
+        <td class="f2" colspan="2"><input name="email" class="input" type="email" value="{{registrationData.email}}" readonly></td>
+        <td class="f2" colspan="2"><input name="phone" class="input" type="text" value="{{registrationData.phone}}"></td>
+    </tr>
+    <tr>
+        <td class="front" colspan="4">Address</td>
+    </tr>
+    <tr>
+        <td class="f2" colspan="4"><input name="address" class="input" type="text" value="{{registrationData.address}}"></td>
+    </tr>
+    <tr>
+        <td class="front" colspan="2">Father Name</td>
+        <td class="front" colspan="2">Mother Name</td>
+    </tr>
+    <tr>
+        <td class="f2" colspan="2"><input name="fatherName" class="input" type="text" value="{{registrationData.fatherName}}"></td>
+        <td class="f2" colspan="2"><input name="motherName" class="input" type="text" value="{{registrationData.motherName}}"></td>
+    </tr>
+    <tr>
+        <td class="front" colspan="2">Father Occupation</td>
+        <td class="front" colspan="2">Mother Occupation</td>
+    </tr>
+    <tr>
+        <td class="f2" colspan="2"><input name="fatherOccupation" class="input" type="text" value="{{registrationData.fatherOccupation}}"></td>
+        <td class="f2" colspan="2"><input name="motherOccupation" class="input" type="text" value="{{registrationData.motherOccupation}}"></td>
+    </tr>
+    <tr>
+        <td class="front" colspan="2">Father's Email</td>
+        <td class="front" colspan="2">Mother's Email</td>
+    </tr>
+    <tr>
+        <td class="f2" colspan="2"><input name="fatherEmail" class="input" type="email" value="{{registrationData.fatherEmail}}"></td>
+        <td class="f2" colspan="2"><input name="motherEmail" class="input" type="email" value="{{registrationData.motherEmail}}"></td>
+    </tr>
+    <tr>
+        <td class="front" colspan="2">Father's Phone</td>
+        <td class="front" colspan="2">Mother's Phone</td>
+    </tr>
+    <tr>
+        <td class="f2" colspan="2"><input name="fatherPhone" class="input" type="text" value="{{registrationData.fatherPhone}}"></td>
+        <td class="f2" colspan="2"><input name="motherPhone" class="input" type="text" value="{{registrationData.motherPhone}}"></td>
+    </tr>
+    <tr>
+        <td class="front" colspan="2">Class 10th Percentage</td>
+        <td class="front" colspan="2">Class 12th Percentage</td>
+    </tr>
+    <tr>
+        <td class="f2" colspan="2"><input name="class10Percentage" class="input" type="text" value="{{registrationData.class10Percentage}}"></td>
+        <td class="f2" colspan="2"><input name="class12Percentage" class="input" type="text" value="{{registrationData.class12Percentage}}"></td>
+    </tr>
+
+</table><p align="center"><input type="submit" class="button" value="Update"></p>
+
+</form>
+</body>
+</html>
+
